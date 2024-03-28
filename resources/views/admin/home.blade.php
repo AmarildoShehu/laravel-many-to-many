@@ -18,7 +18,7 @@
                 <p class="card-text overflow-auto" style="height: 300px">{{ $project->content }}</p>
             </div>
             <div class="card-footer">
-                <p class="card-text mb-1"><strong>Stack:</strong> {{ $project->programming_languages }}.</p>
+                <p class="card-text mb-1"><strong>Stack:</strong> {{ $project->techs }}.</p>
                 <p class="card-text mb-1"><strong>Data creazione:</strong> {{ $project->getCreatedAt() }}</p>
             </div>
             <a href="{{ route('guest.projects.show', $project->slug)}}" class="btn btn-sm btn-outline-info">

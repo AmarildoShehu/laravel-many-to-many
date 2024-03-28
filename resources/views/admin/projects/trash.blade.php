@@ -30,7 +30,7 @@
                 <td>{{ $project->title }}</td>
                 <td>{{ $project->slug }}</td>
                 <td>{{ $project->content }}</td>
-                <td>{{ $project->programming_languages }}</td>
+                <td>{{ $project->technologies}}</td>
                 <td class="text-center"><span class="badge" style="background-color: {{ $project->type?->color }}">{{ $project->type? $project->type->label : 'Nessuna' }}</span></td>
                 <td>{{ $project->getUpdatedAt() }}</td>
                 <td>{{ $project->getUpdatedAt() }}</td>
