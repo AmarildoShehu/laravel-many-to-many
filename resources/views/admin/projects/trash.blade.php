@@ -20,17 +20,24 @@
             <th scope="col">Categoria</th>
             <th scope="col">Data creazione</th>
             <th scope="col">Ultima modifica</th>
-            <th scope="col"></th>
+            
           </tr>
         </thead>
         <tbody>
             @forelse ($projects as $project)
             <tr>
-                <th scope="row">{{ $project->id }}</th>
+                <td>{{ $project->id }}</td>
                 <td>{{ $project->title }}</td>
                 <td>{{ $project->slug }}</td>
                 <td>{{ $project->content }}</td>
-                <td>{{ $project->technologies}}</td>
+                <td>{{ $project->technologie}}</td>
+                <td class="text-center">
+                    @if ($project->type)
+                      <span class="badge" style="background-color: {{ $project->type->color }}">{{ $project->type->label }}</span>
+                    @else
+                      <span class="badge">Nessuna</span>
+                   @endif
+                </td>
                 <td class="text-center"><span class="badge" style="background-color: {{ $project->type?->color }}">{{ $project->type? $project->type->label : 'Nessuna' }}</span></td>
                 <td>{{ $project->getUpdatedAt() }}</td>
                 <td>{{ $project->getUpdatedAt() }}</td>
