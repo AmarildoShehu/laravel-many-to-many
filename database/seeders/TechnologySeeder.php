@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Project;
 use App\Models\Technology;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -31,6 +32,9 @@ class TechnologySeeder extends Seeder
             $new_tech->color = $tech['color'];
 
             $new_tech->save();
+
+            $technology_projects = array_filter($project_ids, fn () => rand(0, 1));
+            $new_tech->projects()->attach($technology_projects);
         }
     }
 }

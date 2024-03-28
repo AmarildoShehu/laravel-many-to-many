@@ -29,13 +29,14 @@ class DatabaseSeeder extends Seeder
         // You can continue with the seeding process here
         
         // For example, seeding projects
-        \App\Models\Project::factory(1)->create();
+        \App\Models\User::factory()->create();
 
-        $this->call(
-        [
-            TypeSeeder::class, 
-            TechnologySeeder::class
-        ]
-        );
+        $this->call(TypeSeeder::class);
+
+        \App\Models\Project::factory(5)->create();
+
+        $this->call(TechnologySeeder::class);
+
+        
     }
 }
