@@ -14,11 +14,13 @@ class TechnologySeeder extends Seeder
      */
     public function run(): void
     {
+        $project_ids = Project::pluck('id')->toArray();
+
         $techs = [
             ['label' => 'HTML', 'color' => 'danger'],
             ['label' => 'CSS', 'color' => 'primary'],
             ['label' => 'ES6', 'color' => 'warning'],
-            ['label' => 'Bootstrap', 'color' => 'dark'],
+            ['label' => 'Bootstrap', 'color' => 'light'],
             ['label' => 'Vue', 'color' => 'success'],
             ['label' => 'SQL', 'color' => 'secondary'],
             ['label' => 'PHP', 'color' => 'info'],

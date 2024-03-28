@@ -97,10 +97,10 @@ class ProjectController extends Controller
     {
 
         $prev_techs = $project->technologies->pluck('id')->toArray();
-
-        $types = Type::select('label', 'id')->get();
-        $technologies = Technology::select('label', 'id')->get();
-        return view('admin.projects.edit', compact('project', 'types', 'technologies', 'prev_techs'));
+        
+    $types = Type::select('label', 'id')->get();
+    $technologies = Technology::select('label', 'id')->get();
+    return view('admin.projects.edit', compact('project', 'types', 'technologies', 'prev_techs'));
     }
 
     /**
