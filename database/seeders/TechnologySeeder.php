@@ -13,10 +13,10 @@ class TechnologySeeder extends Seeder
      */
     public function run(): void
     {
-        $techs =[
+        $techs = [
             ['label' => 'HTML', 'color' => 'danger'],
             ['label' => 'CSS', 'color' => 'primary'],
-            ['label' => 'ES6', 'color' => 'waring'],
+            ['label' => 'ES6', 'color' => 'warning'],
             ['label' => 'Bootstrap', 'color' => 'dark'],
             ['label' => 'Vue', 'color' => 'success'],
             ['label' => 'SQL', 'color' => 'secondary'],
@@ -31,5 +31,6 @@ class TechnologySeeder extends Seeder
             $new_tech->color = $tech['color'];
 
             $new_tech->save();
+        }
     }
 }

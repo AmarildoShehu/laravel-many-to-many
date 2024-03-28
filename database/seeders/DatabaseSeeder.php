@@ -30,5 +30,12 @@ class DatabaseSeeder extends Seeder
         
         // For example, seeding projects
         \App\Models\Project::factory(1)->create();
+
+        $this->call(
+        [
+            TypeSeeder::class, 
+            TechnologySeeder::class
+        ]
+        );
     }
 }
